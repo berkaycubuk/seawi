@@ -4,6 +4,25 @@
 		<meta charset="UTF-8" />
 	</head>
 	<body>
-		<h1>{{.FirstName}} {{.LastName}}</h1>
+		{{- with .FirstName}}
+		<div>{{.}}</div>
+		{{- end}}
+		{{- with .LastName}}
+		<div>{{.}}</div>
+		{{- end}}
+		{{- with .Email}}
+		<div>{{.}}</div>
+		{{- end}}
+		{{- with .Phone}}
+		<div>{{.}}</div>
+		{{- end}}
+
+		{{- with .Languages }}
+		<ul>
+		{{ range $i, $language := . }}
+			<li>{{ $i }}: {{ $language }}</li>
+		{{ end }}
+		</ul>
+		{{- end }}
 	</body>
 </html>

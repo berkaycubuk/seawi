@@ -13,6 +13,12 @@ import (
 type Data struct {
 	FirstName string `yaml:"FirstName"`
 	LastName string `yaml:"LastName"`
+	Email string `yaml:"Email"`
+	Phone string `yaml:"Phone"`
+	LinkedIn string `yaml:"LinkedIn"`
+	GitHub string `yaml:"GitHub"`
+	Website string `yaml:"Website"`
+	Languages []string `yaml:"Languages"`
 }
 
 func getConfiguration(path string) (data *Data, error error) {
